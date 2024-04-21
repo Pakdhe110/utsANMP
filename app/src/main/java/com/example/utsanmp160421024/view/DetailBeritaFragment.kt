@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.utsanmp160421024.R
 import com.example.utsanmp160421024.databinding.FragmentDetailBeritaBinding
 import com.example.utsanmp160421024.viewModel.BeritaViewModel
@@ -15,6 +16,7 @@ class DetailBeritaFragment : Fragment() {
     private lateinit var binding: FragmentDetailBeritaBinding
     private lateinit var paragraphviewModel: ParagraphViewModel
     private lateinit var artikelViewModel: BeritaViewModel
+    var index = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +29,8 @@ class DetailBeritaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        paragraphviewModel = ViewModelProvider(this).get(ParagraphViewModel::class.java)
 
 
     }
