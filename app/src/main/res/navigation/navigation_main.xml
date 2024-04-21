@@ -44,5 +44,9 @@
         android:id="@+id/itemProfile"
         android:name="com.example.utsanmp160421024.view.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionLogin"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

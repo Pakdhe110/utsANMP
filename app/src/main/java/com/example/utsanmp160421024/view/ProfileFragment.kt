@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.utsanmp160421024.R
 import com.example.utsanmp160421024.databinding.FragmentProfileBinding
 import com.example.utsanmp160421024.viewModel.UserViewModel
@@ -26,6 +27,10 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.txtLogout.setOnClickListener{
+            val action = ProfileFragmentDirections.actionLogin()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 }

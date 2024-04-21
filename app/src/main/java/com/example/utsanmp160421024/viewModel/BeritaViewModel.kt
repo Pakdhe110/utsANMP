@@ -24,7 +24,7 @@ class BeritaViewModel(application: Application): AndroidViewModel(application) {
         loadLD.value = false
 
         queue = Volley.newRequestQueue(getApplication())
-        val url = "https://ubaya.me/hybrid/160421024/anmp/get_artikel.php"
+        val url = "https://10.0.2.2/UTSanmp/get_artikel.php"
 
         val stringRequest  = StringRequest(
             Request.Method.GET, url,{
