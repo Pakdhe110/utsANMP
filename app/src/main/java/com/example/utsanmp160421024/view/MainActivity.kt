@@ -2,6 +2,7 @@ package com.example.utsanmp160421024.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import androidx.core.view.GravityCompat
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         binding.BottomNav.setupWithNavController(navController)
+
+        Log.d("TAG", "Main Activity Binding")
 
         navController.addOnDestinationChangedListener{ _,destination, _ ->
             if(destination.id == R.id.loginFragment || destination.id == R.id.registerFragment){

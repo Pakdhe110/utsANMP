@@ -1,5 +1,6 @@
 package com.example.utsanmp160421024.view
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -20,6 +21,7 @@ class BeritaListAdapter(val artikelList:  ArrayList<Artikel>):RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: ArtikelViewHoler, position: Int) {
+        Log.d("TAG", "Berita List Adapter")
         val picasso = Picasso.Builder(holder.itemView.context)
         picasso.listener{picasso, uri, exception ->
             exception.printStackTrace()

@@ -1,6 +1,7 @@
 package com.example.utsanmp160421024.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,8 @@ class BeritaListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d("TAG", "Berita List on")
+        //Log.d("TAG", "")
         viewModel = ViewModelProvider(this).get(BeritaViewModel::class.java)
         viewModel.refresh()
 

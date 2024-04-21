@@ -24,8 +24,9 @@ class BeritaViewModel(application: Application): AndroidViewModel(application) {
         loadLD.value = false
 
         queue = Volley.newRequestQueue(getApplication())
-        val url = "https://10.0.2.2/UTSanmp/get_artikel.php"
-
+        val url = "http://10.0.2.2/UTSanmp/get_artikel.php"
+        Log.d("TAG", "Berita View Model")
+        //172.17.160.1:8080
         val stringRequest  = StringRequest(
             Request.Method.GET, url,{
                 val sType = object : TypeToken<List<Artikel>>() { }.type
