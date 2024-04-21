@@ -44,9 +44,6 @@ class UserViewModel(application: Application):AndroidViewModel(application) {
                 loadLD.value = false
             }
         )
-
-
-
         stringRequest.tag = TAG
         queue?.add(stringRequest)
 

@@ -8,11 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.utsanmp160421024.R
-import com.example.utsanmp160421024.databinding.FragmentBeritaBinding
 import com.example.utsanmp160421024.databinding.FragmentBeritaListBinding
 import com.example.utsanmp160421024.viewModel.BeritaViewModel
-import com.example.utsanmp160421024.viewModel.DetailViewModel
 
 
 class BeritaListFragment : Fragment() {

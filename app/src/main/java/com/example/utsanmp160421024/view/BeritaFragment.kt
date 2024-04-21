@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.example.utsanmp160421024.R
 import com.example.utsanmp160421024.databinding.FragmentBeritaBinding
-import com.example.utsanmp160421024.viewModel.DetailViewModel
+import com.example.utsanmp160421024.viewModel.BeritaViewModel
 
 
 class BeritaFragment : Fragment() {
     private lateinit var binding:FragmentBeritaBinding
-    private lateinit var viewModel: DetailViewModel
+    private lateinit var viewModel: BeritaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
