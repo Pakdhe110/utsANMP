@@ -42,7 +42,11 @@
         android:id="@+id/detailBeritaFragment"
         android:name="com.example.utsanmp160421024.view.DetailBeritaFragment"
         android:label="fragment_detail_berita"
-        tools:layout="@layout/fragment_detail_berita" />
+        tools:layout="@layout/fragment_detail_berita" >
+        <argument
+            android:name="idArtikel"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/itemProfile"
         android:name="com.example.utsanmp160421024.view.ProfileFragment"

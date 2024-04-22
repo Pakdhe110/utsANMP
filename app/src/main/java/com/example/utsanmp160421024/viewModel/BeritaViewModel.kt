@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley
 import com.example.utsanmp160421024.model.Artikel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import org.json.JSONException
 
 class BeritaViewModel(application: Application): AndroidViewModel(application) {
     val artikelLD = MutableLiveData<ArrayList<Artikel>>()
@@ -29,11 +30,17 @@ class BeritaViewModel(application: Application): AndroidViewModel(application) {
         //172.17.160.1:8080
         val stringRequest  = StringRequest(
             Request.Method.GET, url,{
-                val sType = object : TypeToken<List<Artikel>>() { }.type
-                val result = Gson().fromJson<List<Artikel>>(it, sType)
-                artikelLD.value = result as ArrayList<Artikel>?
-                loadLD.value = false
-                Log.d("showfoley", result.toString())
+                try{
+                    val sType = object : TypeToken<List<Artikel>>() { }.type
+                    val result = Gson().fromJson<List<Artikel>>(it, sType)
+                    artikelLD.value = result as ArrayList<Artikel>?
+                    loadLD.value = false
+                    Log.d("showfoley", result.toString())
+                }
+                catch (e:JSONException){
+                    Log.d("TAG", "JSON ERROR: " + e)
+                }
+
             },
             {
                 Log.d("showfoley", it.toString())

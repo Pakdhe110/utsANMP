@@ -33,7 +33,7 @@ class BeritaListAdapter(val artikelList:  ArrayList<Artikel>):RecyclerView.Adapt
 
         holder.binding.btnRead.setOnClickListener{
             val idArtikel = artikelList[position].id
-            val action = BeritaListFragmentDirections.actionDetailBerita()
+            val action = BeritaListFragmentDirections.actionDetailBerita(artikelList[position].id)
             Navigation.findNavController(it).navigate(action)
         }
     }
