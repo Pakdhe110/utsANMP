@@ -28,19 +28,19 @@ class ParagraphViewModel(application: Application):AndroidViewModel(application)
         loadLD.value = false
 
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://10.0.2.2/UTSanmp/get_paragraph.php"
+        val url = "http://10.0.2.2/UTSanmp/get_paragraf.php"
         val params = HashMap<String, String>()
         params["idArtikel"] = id
 
         Log.d("TAG","Berhasil Detail 1")
 
         val stringRequest  = object: StringRequest(
-            Request.Method.GET, url,{
+            Request.Method.POST, url,{
                 json -> Log.d("SHOW VOLLEY", json)
                 try{
                     val jsonObject = JSONObject(json)
                     val result = jsonObject.getString("result")
-                    val jsonData = jsonObject.getJSONObject("data")
+                    val jsonData = jsonObject.getJSONArray("data")
                     Log.d("TAG", "Berhasil Detail 2")
 
                     if (result == "OK"){
@@ -54,7 +54,7 @@ class ParagraphViewModel(application: Application):AndroidViewModel(application)
                     else{
                         Log.w("ERROR", "Unable to fetch data")
                         val msg = jsonObject.getString("message");
-                        Log.d("TAG", msg)
+                        Log.d("TAG", "Paragraf No Data: "+msg)
                     }
 
                 }
@@ -63,7 +63,6 @@ class ParagraphViewModel(application: Application):AndroidViewModel(application)
                 }
             },
             {
-                Log.d("showfoley", it.toString())
                 paragraphLoadErrorLD.value = false
                 loadLD.value = false
             }
@@ -72,7 +71,6 @@ class ParagraphViewModel(application: Application):AndroidViewModel(application)
                 return params
             }
         }
-
             stringRequest.tag = TAG
         queue?.add(stringRequest)
 

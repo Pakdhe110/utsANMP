@@ -58,9 +58,7 @@ class UserViewModel(application: Application):AndroidViewModel(application) {
                     }
                 }
                 catch (e:JSONException){
-                    Log.d("TAG", "Error JSON : " + e)
-                    val jsonObj = JSONObject(json)
-                    Log.d("TAG", jsonObj.getString("Message"))
+                    Log.d("TAG", "Artikel Detail Error JSON : " + e)
                 }
             },
             {

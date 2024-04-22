@@ -1,6 +1,7 @@
 package com.example.utsanmp160421024.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,21 +28,9 @@ class BeritaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(viewModel::class.java)
-        viewModel.refresh()
 
-        observeViewModel()
-        binding
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding.btnRead.setOnClickListener{
-            val action = BeritaListFragmentDirections.actionDetailBerita()
-            Navigation.findNavController(it).navigate(action)
-        }
-    }
     fun observeViewModel(){
 
     }
